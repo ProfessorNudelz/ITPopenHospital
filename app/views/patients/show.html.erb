@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1><%= @patient.prefix + " " + @patient.lastName + ", " + @patient.firstName %></h1>
+  <h3>Patient ID: <%= @patient.id %></h3>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <p><strong>Date of Birth:</strong> <%= @patient.dob %></p>
+      <p><strong>Gender:</strong> <%= @patient.gender %></p>
+      <p><strong>Email:</strong> <a href="mailto:<%= @patient.email %>"><%= @patient.email %></a></p>
+      <p><strong>Mobile:</strong> <a href="tel:<%= @patient.phoneNumber %>"><%= @patient.phoneNumber %></a></p>
+      <p><strong>Medicare:</strong> <%= @patient.medicare + " " + @patient.IRN %></p>
+      <p><strong>Address:</strong></p>
+      <p><%= @patient.address %></p>
+      <p><%= @patient.suburb + ", " + @patient.state + " " + @patient.postcode %></p>
+    </div>
+    <div class="col">
+      <strong>Notes:</strong>
+      <p><%= @patient.notes %></p>
+
+      <strong>Medications:</strong>
+      <p><%= @patient.medications %></p>
+
+      <strong>Medical History:</strong>
+      <p><%= @patient.medicalHistory %></p>
+
+      <p><strong>Created At: </strong><%= @patient.created_at %></p>
+      <p><strong>Updated At: </strong><%= @patient.updated_at %></p>
+    </div>
+  </div>
+  
+  <%= link_to "Edit Patient", edit_patient_path(@patient), :class=>"btn btn-block btn-warning" %>
+  <%= link_to "Delete Patient", patient_path(@patient), method: :delete, :class=>"btn btn-block btn-danger" %>
+</div>

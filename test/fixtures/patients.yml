@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prefix: MyString
+  firstName: MyString
+  lastName: MyString
+  email: MyString
+  medicare: MyString
+  IRN: MyString
+  dob: MyString
+  phoneNumber: MyString
+  address: MyString
+  suburb: MyString
+  state: MyString
+  postcode: MyString
+  notes: MyText
+  medications: MyText
+  medicalHistory: MyText
+
+two:
+  prefix: MyString
+  firstName: MyString
+  lastName: MyString
+  email: MyString
+  medicare: MyString
+  IRN: MyString
+  dob: MyString
+  phoneNumber: MyString
+  address: MyString
+  suburb: MyString
+  state: MyString
+  postcode: MyString
+  notes: MyText
+  medications: MyText
+  medicalHistory: MyText

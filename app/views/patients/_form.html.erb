@@ -1,0 +1,96 @@
+<%= form_with model: @patient do |form| %>
+  <% if @patient.errors.full_messages.any? %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :prefix %><br>
+    <%= form.select :prefix, ["Mr.", "Ms.", "Miss.", "Mrs.", "Mst."] %>
+  </div>
+  
+  
+  <div>
+    <%= form.label :firstName, "First Name" %><br>
+    <%= form.text_field :firstName %>
+  </div>
+  
+  <div>
+    <%= form.label :lastName, "Last Name" %><br>
+    <%= form.text_field :lastName %>
+  </div>
+
+  <div>
+    <%= form.label :gender %><br>
+    <%= form.select :gender, ["Male", "Female", "Other"] %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+  </div>
+  
+  <div>
+    <%= form.label :medicare %><br>
+    <%= form.text_field :medicare %>
+  </div>
+
+  <div>
+    <%= form.label :IRN, "Individual Reference Number" %><br>
+    <%= form.text_field :IRN %>
+  </div>
+
+  <div>
+    <%= form.label :dob, "Date of Birth" %><br>
+    <%= form.text_field :dob, placeholder: "DD/MM/YYYY" %>
+  </div>
+
+  <div>
+    <%= form.label :phoneNumber, "Phone Number" %><br>
+    <%= form.telephone_field :phoneNumber %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :suburb %><br>
+    <%= form.text_field :suburb %>
+  </div>
+
+  <div>
+    <%= form.label :state %><br>
+    <%= form.select :state, ["VIC", "NSW", "QLD", "SA", "NT", "WA", "ACT", "TAS"] %>
+  </div>
+
+  <div>
+    <%= form.label :postcode %><br>
+    <%= form.text_field :postcode %>
+  </div>
+
+  <div>
+    <%= form.label :notes %><br>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div>
+    <%= form.label :medications %><br>
+    <%= form.text_area :medications %>
+  </div>
+
+  <div>
+    <%= form.label :medicalHistory, "Medical History" %><br>
+    <%= form.text_area :medicalHistory %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

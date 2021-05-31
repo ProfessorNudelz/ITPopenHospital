@@ -1,0 +1,24 @@
+<div class="row">
+  <h1>Patients</h1>
+</div>
+
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <th scope="row"><a href="<%= patient_path(patient) %>"><%= patient.prefix + " " + patient.lastName + ", " + patient.firstName %></a></th>
+          <td><%= patient.dob %></td>
+          <td><%= patient.address %></td>
+        </tr> 
+      <% end %>
+    </tbody>
+  </table>
+</div>
